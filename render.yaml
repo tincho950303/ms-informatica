@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: ms-servicio-pc
+    name: ms-informatica
     runtime: static
     buildCommand: echo "Static site - no build"
     staticPublishPath: ./

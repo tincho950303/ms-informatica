@@ -54,8 +54,7 @@ npx prettier --write "**/*.{html,css,js,json,md}"
 - Verificar post-deploy: botones WhatsApp abren `wa.me/542213592017`, form arma mensaje, anclas `#servicios #contacto` funcionan, mapa carga.
 
 ## 9. Git
-- Repo nuevo, rama `main`. Commits en español, concisos. No commitear `node_modules/`, `.env`, `*.drawio`, `*.pdf` (ver `.gitignore`).
-- Remote esperado: `https://github.com/TU_USUARIO/ms-servicio-pc.git` — actualizar en `package.json` + `render.yaml:repo` cuando exista el real.
+- Repo nuevo, rama `main` (remote: `https://github.com/tincho950303/ms-informatica.git`). Commits en español, concisos. No commitear `node_modules/`, `.env`, `*.drawio`, `*.pdf` (ver `.gitignore`).
 
 ## 10. Qué NO hacer
 - No agregar backend, npm start server, ni dependencias de runtime (solo devDeps `serve/prettier`).

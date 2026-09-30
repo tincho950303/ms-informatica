@@ -59,7 +59,7 @@ cd "MS Servicio PC"
 git init -b main
 git add .
 git commit -m "Vidriera MS Servicio PC: landing + contacto WhatsApp lista para Render"
-git remote add origin https://github.com/TU_USUARIO/ms-servicio-pc.git
+git remote add origin https://github.com/tincho950303/ms-informatica.git
 git push -u origin main
 ```
 
