@@ -1,0 +1,43 @@
+{
+  "name": "ms-servicio-pc",
+  "version": "1.0.0",
+  "description": "Sitio web de Soluciones Informáticas MS - Reparación de PC en La Plata y alrededores",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve . -l 3000",
+    "build": "echo 'Static site - no build required'",
+    "preview": "npx serve . -l 5000",
+    "lint:html": "npx htmlhint *.html",
+    "lint:css": "npx stylelint css/**/*.css",
+    "format": "npx prettier --write \"**/*.{html,css,js,json,md}\""
+  },
+  "keywords": [
+    "reparacion-pc",
+    "servicio-tecnico",
+    "la-plata",
+    "hardware",
+    "software",
+    "formateo",
+    "mantenimiento-pc"
+  ],
+  "author": "Carlos Martín Sosapaez",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.0",
+    "htmlhint": "^1.1.4",
+    "stylelint": "^16.0.0",
+    "prettier": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tu-usuario/ms-servicio-pc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tu-usuario/ms-servicio-pc/issues"
+  },
+  "homepage": "https://ms-servicio-pc.onrender.com"
+}
