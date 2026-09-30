@@ -2,6 +2,8 @@
 
 Vidriera estática del servicio técnico de PC y notebooks. HTML + CSS + JS, sin backend.
 
+🌐 **Sitio en vivo:** https://ms-informatica.onrender.com
+
 ## Dev local
 
 ```bash
