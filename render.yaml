@@ -2,8 +2,6 @@ services:
   - type: web
     name: ms-servicio-pc
     runtime: static
-    repo: TU_USUARIO/ms-servicio-pc
-    branch: main
     buildCommand: echo "Static site - no build"
     staticPublishPath: ./
     routes:
