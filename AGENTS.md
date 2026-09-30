@@ -24,10 +24,10 @@ README.md        # guía humana
 - Archivos legacy eliminados: `admin.html`, `app.js`, `css/estilos.css`, `css/estilos2.css`, `css/header.css`, `css/main.css`. **No recrearlos.** Si un agente los ve en historial, ignorarlos.
 
 ## 4. Fuente de verdad de contacto (NO hardcodear en HTML)
-`js/main.js` → `const SITE = { whatsapp, displayPhone, email, zona, horario }`.
-- HTML usa atributos `data-wa="mensaje"` y `data-email`, `data-phone-display`. El JS genera los `https://wa.me/...`.
-- Para cambiar número/email: editar SOLO `SITE`. Nunca esparcir el número a mano por el HTML.
-- Actual: `whatsapp: 542213592017`, `email: carlosmartin_sosapaez@hotmail.com`, zona La Plata/Berisso/Ensenada, Lun–Sáb 9–19h.
+`js/main.js` → fragmentos `_WA` (WhatsApp) y `_MAIL_U`/`_MAIL_D` (email), expuestos vía getters de `SITE`.
+- HTML usa atributos `data-wa="mensaje"`, `data-email`, `data-email-text`, `data-phone-display`. El JS genera los `https://wa.me/...`, el `mailto:` y los textos visibles en runtime.
+- ANTI-SPAM (repo público): el número y email completos no aparecen en el HTML, ni en el JSON-LD, ni en una sola línea del código. No los escribas en claro en ningún archivo nuevo (ni README, ni HTML, ni JSON-LD). Para cambiarlos: editar SOLO los fragmentos en `main.js`.
+- Zona: La Plata/Berisso/Ensenada, Lun–Sáb 9–19h.
 
 ## 5. Secciones y reglas de edición
 - `#servicios`: cards con `data-cat="mantenimiento|software|hardware|armado|domicilio"`. Si agregás un servicio, poné categoría válida (filtros en `.filter-btn`) y `data-wa` con mensaje prellenado.
@@ -51,7 +51,7 @@ npx prettier --write "**/*.{html,css,js,json,md}"
 
 ## 8. Deploy Render
 - Blueprint: Render → New → Blueprint → repo (lee `render.yaml`). O manual Static Site, Publish `./`, Build vacío.
-- Verificar post-deploy: botones WhatsApp abren `wa.me/542213592017`, form arma mensaje, anclas `#servicios #contacto` funcionan, mapa carga.
+- Verificar post-deploy: botones WhatsApp abren `wa.me/...`, form arma mensaje, anclas `#servicios #contacto` funcionan, mapa carga.
 
 ## 9. Git
 - Repo nuevo, rama `main` (remote: `https://github.com/tincho950303/ms-informatica.git`). Commits en español, concisos. No commitear `node_modules/`, `.env`, `*.drawio`, `*.pdf` (ver `.gitignore`).

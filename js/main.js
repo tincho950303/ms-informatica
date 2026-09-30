@@ -1,8 +1,20 @@
 // MS Servicio PC — config + interacciones (estático, sin backend)
+//
+// ANTI-SPAM: el número y el email están fragmentados y se ensamblan
+// en tiempo de ejecución. Nunca aparecen completos en el HTML ni en
+// una sola línea del código, para frenar scrapers básicos.
+// Para cambiarlos, editá solo los fragmentos de abajo.
+const _WA = ["54", "22", "13", "592", "017"]; // se une → número wa.me
+const _MAIL_U = ["carlosmartin", "_sosapa", "ez"]; // usuario
+const _MAIL_D = ["hot", "mail", ".com"]; // dominio
+
 const SITE = {
-  whatsapp: "542213592017", // ← cambiá tu número acá (solo dígitos, ej: 5492211234567)
-  displayPhone: "+54 221 359 2017",
-  email: "carlosmartin_sosapaez@hotmail.com",
+  get whatsapp() { return _WA.join(""); },
+  get displayPhone() {
+    const w = _WA.join("");
+    return `+${w.slice(0, 2)} ${w.slice(2, 5)} ${w.slice(5, 8)} ${w.slice(8)}`;
+  },
+  get email() { return _MAIL_U.join("") + "@" + _MAIL_D.join(""); },
   zona: "La Plata, Berisso, Ensenada y alrededores",
   horario: "Lun a Sáb · 9:00 a 19:00",
 };
@@ -25,6 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   document.querySelectorAll("[data-email]").forEach((a) => {
     a.href = `mailto:${SITE.email}?subject=${encodeURIComponent("Presupuesto — MS Servicio PC")}`;
+  });
+  document.querySelectorAll("[data-email-text]").forEach((el) => {
+    el.textContent = SITE.email;
   });
   document.querySelectorAll("[data-phone-display]").forEach((el) => {
     el.textContent = SITE.displayPhone;
